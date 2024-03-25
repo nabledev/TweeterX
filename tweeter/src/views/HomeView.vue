@@ -1,6 +1,4 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-
 
 </script>
 
@@ -20,7 +18,7 @@ import TheWelcome from '../components/TheWelcome.vue'
           <input type="password" name="mdp">
           <label for="confirmmdp">Confirmation mot de passe</label>
           <input type="password" name="confirmmdp">
-          <span>Creer un compte</span>
+          <span id="createAccount">Creer un compte </span>
         </form>
         
         <h3>Vous avez déja un compte ?</h3>
@@ -53,6 +51,7 @@ h1{
 }
 
 input{
+  margin-top: 12px;
   background-color: black;
   border : 0.1px solid #66696e
 }
@@ -67,6 +66,25 @@ button{
   margin-top: 50px;
 }
 
+#createAccount{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding : 20px 10px 20px 10px;
+  background: rgb(32,32,171);
+  background: linear-gradient(90deg, rgba(32,32,171,1) 0%, rgba(19,165,195,1) 100%);
+  border-radius: 8px;
+}
+
+#createAccount:hover{
+  cursor: pointer;
+}
+
+
+label{
+  margin-top: 4px;
+}
 
 
 </style>
