@@ -1,29 +1,70 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
+
+
 </script>
 
 <template>
   <main>
     <div id="ContainerGeneral">
       <img src="../../public/logoX.png" alt="">
-      <div>
+      <div id="divInfo">
         <h1>Ça se passe maintenant</h1>
         <h2>Inscrivez vous</h2>
         <form>
-          <label for=""></label>
-          <input type="text">
+          <label for="user">Nom d'utilisateur</label>
+          <input type="text" name="user">
+          <label for="mail">Email</label>
+          <input type="email" name="mail">
+          <label for="mdp">Mot de passe</label>
+          <input type="password" name="mdp">
+          <label for="confirmmdp">Confirmation mot de passe</label>
+          <input type="password" name="confirmmdp">
+          <span>Creer un compte</span>
         </form>
+        
+        <h3>Vous avez déja un compte ?</h3>
+        <span>se connecter</span>
       </div>
     </div>
   </main>
 </template>
 
+<script>
+
+</script>
 
 <style scoped>
 
 #ContainerGeneral{
   display: flex;
   flex-direction: row;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+h1{
+  font-size: 64px;
+  max-width: 600px;
+}
+
+input{
+  background-color: black;
+  border : 0.1px solid #66696e
+}
+
+button{
+  background-color: black;
+  color: white;
+}
+
+#divInfo{
+  margin-left: 200px;
+  margin-top: 50px;
 }
 
 
