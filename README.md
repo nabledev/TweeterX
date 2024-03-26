@@ -3,6 +3,7 @@
 ## Requirements
 
 - vue@3.4.21
+- node : v21.0.0
 - Redis server
 
 ## How to
