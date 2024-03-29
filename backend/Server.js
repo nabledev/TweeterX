@@ -1,6 +1,8 @@
 const express = require("express")
 const app = express()
 
+
+// cors 
 app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', true);
@@ -12,13 +14,13 @@ app.all('*', function(req, res, next) {
 
 // Connexion pour la base donnees 
   const { Pool } = require('pg');
-// a changer avec celui du docker-compose 
+ // a changer avec celui du docker-compose 
   const pool = new Pool({
     user: 'test',
     host: 'local_pgdb', // Nom du service de la base de données dans Docker Compose
     database: 'twitter',
     password: 'test',
-    port: 5432,
+    port: 5400,
   });
     
   // Exemple de requête SQL
@@ -48,3 +50,50 @@ app.all('*', function(req, res, next) {
   });
   
 
+// route : req = request / res = response 
+
+app.get("/tweets" , (req,res) => {
+  tweetsCollection.find({}).toArray()
+  .then(t => {
+      t.sort( (a,b) => b.timestamp-a.timestamp)
+      res.json(t)
+  })
+})
+
+// app.post("/post", (req, res) => {
+// // Vérifier les données
+// // -> pour la sécurité
+// const tweet = {
+//   user: req.body.user,
+//   content: req.body.content,
+//   timestamp: Date.now()
+// }
+
+// tweetsCollection.insertOne(tweet).then(r => {
+//   res.json(r)
+// })
+// })
+
+
+// app.post("/login", (req, res) => {
+
+// usersCollection.find({ 
+//   login: req.body.login,
+//   password: req.body.password
+// }).toArray()
+//     .then(existingUsers => {
+//       if (existingUsers.length == 0) {
+//         res.json({ error: true })
+//       } else {
+//         res.json({ 
+//           login: req.body.login,
+//           password: req.body.password,
+//           name: existingUsers[0].name
+//         })
+//       }
+//     })
+// })
+
+
+console.log("started on port 7410")
+app.listen(7410)
