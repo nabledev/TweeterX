@@ -14,10 +14,10 @@ app.all('*', function(req, res, next) {
   const { Pool } = require('pg');
 // a changer avec celui du docker-compose 
   const pool = new Pool({
-    user: 'dbuser',
-    host: 'db', // Nom du service de la base de données dans Docker Compose
-    database: 'dbname',
-    password: 'dbpass',
+    user: 'test',
+    host: 'local_pgdb', // Nom du service de la base de données dans Docker Compose
+    database: 'twitter',
+    password: 'test',
     port: 5432,
   });
     

@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: local_pgdb
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_ROOT_PASSWORD: root
+      POSTGRES_DB: twitter
+    volumes:
+      - ./local_pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5400:5400
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "3001:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@a.fr
+      PGADMIN_DEFAULT_PASSWORD: test
+      #PGADMIN_CONFIG_SERVER_MODE: 'False'
+      
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
