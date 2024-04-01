@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Exposez le port sur lequel l'application s'exécute
-EXPOSE 8080
+EXPOSE 7410
 
 # Commande par défaut pour exécuter l'application
 CMD ["node", "server.js"]
