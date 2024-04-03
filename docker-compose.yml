@@ -29,6 +29,7 @@ services:
       - pgadmin-data:/var/lib/pgadmin
 
   back: 
+    container_name: backapi
     build : 
       context: ./back
       dockerfile: Dockerfile 
@@ -38,6 +39,7 @@ services:
       - ./back:/var/www/html 
 
   front:
+    container_name: front 
     build:
       context: ./tweeter
       dockerfile: Dockerfile

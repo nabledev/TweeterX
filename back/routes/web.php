@@ -8,6 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// getTweet
 Route::get('/tweets', [TweetController::class, 'index']);
 
+// getUSers
 Route::get('/Users', [UsersController::class, 'GetAllUser']);
+
+// getByMail 
+Route::get('/user/{email}', [UserController::class, 'getByMail']);
+
+// post de users 
+Route::post('/user/post', [UserController::class, 'store']);
+
+// post de teweet
+Route::post('/tweet', [TweetController::class, 'store']);
+

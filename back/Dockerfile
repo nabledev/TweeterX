@@ -17,6 +17,4 @@ run service apache2 restart
 workdir /var/www/html
 #run composer update 
 
-
 cmd ["php" , "artisan" , "serve" , "--host=0.0.0.0" , "--port=8082"]
-
