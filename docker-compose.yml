@@ -13,7 +13,7 @@ services:
       - ./local_pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - 5400:5400
+      - 5432:5432
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
@@ -28,6 +28,23 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 
+  back: 
+    build : 
+      context: ./back
+      dockerfile: Dockerfile 
+    ports : 
+      - 7410:8082
+    volumes : 
+      - ./back:/var/www/html 
+
+  front:
+    build:
+      context: ./tweeter
+      dockerfile: Dockerfile
+    ports:
+      - 8081:80
+
+
 volumes:
   local_pgdata:
-  pgadmin-data:
+  pgadmin-data: 

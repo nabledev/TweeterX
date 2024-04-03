@@ -1,6 +1,22 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+
+async function fetchData() {
+      try {
+        const response = await axios.get('http://localhost:7410/tweets');
+
+        const data = response.data;
+        console.log(data)
+        tasks.value = data;
+
+        
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error);
+      }
+    }
+
 </script>
 
 <template>
