@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:7410/tweets');
+        const response = await axios.get('http://localhost:8082/tweets');
 
         const data = response.data;
         console.log(data)
