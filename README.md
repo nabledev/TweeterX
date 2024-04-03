@@ -9,14 +9,17 @@
 ## How to
 
 ```
-pip install -r requirements.txt
+
 ```
 
 Then you can launch the app with
 
 ```
-
+docker compose build
+docker compose up -d 
 ```
+
+
 
 ## App information
 
