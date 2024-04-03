@@ -16,14 +16,14 @@ Then you can launch the app with
 
 ```
 docker compose build
-docker compose up -d 
+docker compose up  
 ```
 
 
 
 ## App information
 
-- The API is running on port 5000
+- The API is running on port 8081
 
 ## installation :
 
