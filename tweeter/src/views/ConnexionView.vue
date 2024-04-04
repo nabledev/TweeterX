@@ -1,5 +1,19 @@
-<script setup>
+<script>
+import axios from 'axios';
 
+// Les importations peuvent être placées au début du fichier
+export default {
+  methods: {
+    // Définissez la méthode à appeler lors du clic
+    
+    onClickHandler() {
+
+      localStorage.setItem('Connected', '1');
+      location.reload();
+
+    }
+  }
+}
 </script>
 
 <template>
@@ -14,7 +28,7 @@
           <input type="text" name="user">
           <label for="mdp">Mot de passe</label>
           <input type="password" name="mdp">
-          <span id="createAccount">Connexion</span>
+          <span @click="onClickHandler"  id="createAccount">Connexion</span>
         </form>
         
         <h3>Vous avez déja un compte ?</h3>
@@ -33,6 +47,8 @@
 #ContainerGeneral{
   display: flex;
   flex-direction: row;
+  margin-left: 260px;
+  margin-top: 80px;
 }
 
 form{

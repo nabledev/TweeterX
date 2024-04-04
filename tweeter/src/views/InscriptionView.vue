@@ -37,6 +37,8 @@
 #ContainerGeneral{
   display: flex;
   flex-direction: row;
+  margin-left: 260px;
+  margin-top: 80px;
 }
 
 form{
