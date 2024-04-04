@@ -10,9 +10,7 @@
 
 ## How to
 
-```
 it's a twitter api with a back in laravel and the front in VueJs
-```
 
 Then you can launch the app with
 
