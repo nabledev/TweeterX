@@ -80,3 +80,26 @@ alter table TWEET
    add constraint FK_TWEET_POSTER_UTILISAT foreign key (IDUTILISATEUR)
       references UTILISATEUR (IDUTILISATEUR)
       on delete restrict on update restrict;
+
+-- Insertion de données dans la table TWEET
+INSERT INTO UTILISATEUR (PSEUDOUTILISATEUR, MDPUTILISATEUR, MAILUTILISATEUR) 
+VALUES 
+    ('utilisateur1', 'motdepasse1', 'utilisateur1@example.com'),
+    ('utilisateur2', 'motdepasse2', 'utilisateur2@example.com'),
+    ('utilisateur3', 'motdepasse3', 'utilisateur3@example.com');
+
+-- Insertion de données dans la table TWEET
+INSERT INTO TWEET (IDUTILISATEUR, MESSAGETWEET, NBVUE) 
+VALUES 
+    (1, 'Premier tweet de l''utilisateur 1', 10),
+    (2, 'Un autre tweet de l''utilisateur 2', 15),
+    (3, 'Troisième tweet de l''utilisateur 3', 20);
+
+-- Insertion de données dans la table LIKER
+INSERT INTO LIKER (IDUTILISATEUR, IDTWEET) 
+VALUES 
+    (1, 2), -- Utilisateur 1 aime le tweet 2
+    (2, 1), -- Utilisateur 2 aime le tweet 1
+    (3, 3); -- Utilisateur 3 aime le tweet 3
+
+
