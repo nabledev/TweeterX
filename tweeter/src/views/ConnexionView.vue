@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-
+import router from '@/router';
 // Les importations peuvent être placées au début du fichier
 export default {
   methods: {
@@ -9,6 +9,7 @@ export default {
     onClickHandler() {
 
       localStorage.setItem('Connected', '1');
+      history.pushState({}, '', '/');
       location.reload();
 
     }
