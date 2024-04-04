@@ -11,6 +11,9 @@ Route::get('/', function () {
 // getTweet
 Route::get('/tweets', [TweetController::class, 'index']);
 
+
+Route::get('/tweetsjoin', [TweetController::class, 'indexJoin']);
+
 // getUSers
 Route::get('/Users', [UsersController::class, 'GetAllUser']);
 

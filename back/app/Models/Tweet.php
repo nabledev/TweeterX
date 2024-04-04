@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Users;
+
 class Tweet extends Model
 {
     use HasFactory;
@@ -16,6 +18,12 @@ class Tweet extends Model
         "MESSAGETWEET",
         "NBVUE",
     ];
+
+    public function utilisateur()
+    {
+    
+        return $this->belongsTo(Users::class, 'idutilisateur', 'idutilisateur');
+    }
 
 
 }

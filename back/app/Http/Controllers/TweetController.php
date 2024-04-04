@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tweet;
+use App\Models\Users;
 
 
 
@@ -12,6 +13,16 @@ class TweetController extends Controller
     public function index(){
         return Tweet::all();
     }
+
+    public function indexJoin()
+    {
+        // Effectuer la jointure en utilisant la relation définie dans le modèle Utilisateur
+        $tweets = Tweet::with('utilisateur')->get();
+
+        return response()->json(['tweets' => $tweets], 200);
+    }
+
+  
 
     // post 
     public function store(Request $request)
