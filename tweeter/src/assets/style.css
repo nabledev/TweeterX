@@ -1,8 +1,14 @@
 body{
 
-        background-color: #1a202a;
+        background: rgb(26,32,42);
+        background: linear-gradient(90deg, rgba(26,32,42,1) 0%, rgba(75,97,134,1) 100%);
         color: white;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       
+}
+
+
+input{
+        color: white;
 }
   
